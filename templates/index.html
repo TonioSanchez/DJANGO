@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : BarbedFlower 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20140322
+
+-->
+{% load staticfiles %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href='{% static "http://fonts.googleapis.com/css?family=Varela" %}'/>	
+
+<link rel="stylesheet" type="text/css" media="all" href='{% static "default.css" %}'/>	
+
+<link rel="stylesheet" type="text/css" media="all" href='{% static "fonts.css" %}'/>	
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="wrapper">
+	<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1><a href="#">SuperHeroes</a></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
+				<li><a href="#" accesskey="2" title="">Our Clients</a></li>
+				<li><a href="#" accesskey="3" title="">About Us</a></li>
+				<li><a href="#" accesskey="4" title="">Careers</a></li>
+				<li><a href="#" accesskey="5" title="">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+	</div>
+	<div id="banner">
+		<div class="container">
+			<div class="title">
+				<h2>Ayuda a más personas</h2>
+				<span class="byline">Suscribete ya!</span> </div>
+				<div class="news">
+		    <div class="container">
+			      
+		              
+                <button id="btn" onmouseover="random()" align="center">Click</button>
+            </div>
+     </div>    
+        
+        <script>
+            
+            function random() {
+            
+                document.getElementById("btn").style.top =Math.floor((Math.random()*600)+400) +'px';
+                document.getElementById("btn").style.right =Math.floor((Math.random()*800)+300) +'px';
+                
+            }
+        
+        
+        </script>
+			
+		</div>
+	</div>
+
+    
+	<div id="page" class="container">
+    
+<div class="title">
+	  <h2>Calculadora</h2>
+	  <span class="byline">Herramienta de calculo y estadisticas</span> </div>
+		<body>
+        <div class="all">
+        <div  class="todo">
+        <div><h1 class="cal" id="calculo" class="button">0</h1></div>
+        <div class="primerafila">
+            <button type="button" id="uno" onclick="escribir(id)" value="1" class="button"> 1</button><button id="dos" onclick="escribir(id)" value="2" class="button"> 2</button><button id="tres" onclick="escribir(id)" value="3" class="button"> 3</button><button id="mas" onclick="escribir(id)" value="+" class="button"> +</button>
+        </div>
+        <div class="segunda">
+            <button id="cuatro" onclick="escribir(id)" value="4" class="button"> 4</button><button id="cinco" onclick="escribir(id)" value="5" class="button"> 5</button><button id="seis" onclick="escribir(id)" value="6" class="button"> 6</button><button id="menos" onclick="escribir(id)" value="-" class="button"> -</button>
+        </div>        
+        
+        <div class="tercera">
+            <button id="siete" onclick="escribir(id)" value="7" class="button"> 7</button><button id="ocho" onclick="escribir(id)" value="8" class="button"> 8</button><button id="nueve" onclick="escribir(id)" value="9" class="button"> 9</button><button id="divi" onclick="escribir(id)" value="/" class="button"> /</button>
+        </div>
+        <div>
+            <button id="del" onclick="borrar()" value="d" class="button"> d</button><button id="cero" onclick="escribir(id)" value="0" class="button"> 0</button><button id="igual" onclick="result()" value="=" class="button"> =</button><button id="por" onclick="escribir(id)" value="*" class="button"> *</button>
+        
+        </div>
+        </div>
+        
+  
+        
+        <div class="select">
+            
+        </div>    
+        </div>
+        
+    </body>
+    <script>
+        console.log("scrip");
+        
+        var led="";
+        
+        function escribir(id){
+            console.log("funcion escribir "+ id);
+            
+            led= led +document.getElementById(id).value;
+            
+            console.log(led+"  este es led");
+            
+            document.getElementById("calculo").innerHTML=led ;
+        }
+        
+        function result(){
+            console.log(led +" led")
+            
+            var resul= eval(led);
+            
+            console.log(resul+ " resul")
+            
+            document.getElementById("calculo").innerHTML=resul ;
+            
+            led="";
+        }
+        
+        function borrar(){
+            
+            document.getElementById("calculo").innerHTML= "";
+            led="0";
+            
+        }
+        
+        function cambiar(valor){
+            console.log("entre a cambiar");
+            
+            document.getElementById("cssArchivo").href=valor;
+            
+        }
+        
+    </script>
+		
+  </div>
+
+  <div id="featured">
+		<div class="container">
+        
+			<div class="title">
+				<h2>Galeria de Fotos</h2>
+				<span class="byline">Muestras de fotos deleitantes</span> </div>
+			    <body>
+					
+					
+					<img class="image-circle" src="{% static "images/caramelos.jpg" %}" alt= ""/>
+					
+        <progress class="barra" id="barra" value="0" max="100"></progress>
+        <span id="valor"></span> %
+    			</body> 
+    
+    <script>
+
+	function cambiar(){
+        
+        var numero = Math.floor(Math.random() * 4 );
+
+console.log("viva la merca pq mi papa vende")
+        
+        var imagenes = new Array( "candy.jpg","caramelos.jpg","chicle.jpg","gomitas.jpg","limon.jpg");        
+        
+        document.getElementById("im").src="images/"+imagenes[numero];
+
+    }
+               
+        
+var j=1;
+
+var maximo=100;
+
+function aumentar(){
+            
+            document.getElementById("barra").setAttribute("value",j++);
+            
+            
+            if (j==maximo){
+                
+                j=1;
+            }
+            
+        } 
+        
+        
+        
+	setInterval(cambiar ,20); 
+setInterval(aumentar,20);       
+     </script>   
+	</div>
+		
+	</div>
+    
+    
+	<div id="extra" class="container">
+		<div class="title">
+			<h2>Otras Herramientas</h2>
+			<span class="byline">Conversor, Cronometro, etc.</span> </div>
+		<div id="three-column">
+			<div class="boxA">
+				<div class="box">
+					 <form name="fo">
+    
+    <td  colspan="5"><input onkeypress="return solonumeros(event)" type="text" name="valores1" id="valores1" ></td> 
+    
+    <select name="monedas1" onclick="cambio()" >
+            <option value="1">Dolares</option>
+            <option value="1.13">Euro</option>
+            <option value="0.27">Reales</option>
+            <option value="0.0677">Pesos Argentinos</option>
+            <option value="0.0015">Chilenos</option>
+            <option value="0.031">Uruguayos</option>
+        </select><br><br><br><br><br><br><br>
+    
+    
+    <td  colspan="5"><input onkeypress="return solonumeros2(event)" type="text" name="valores2" id="valores2" ></td>
+    
+    <select name="monedas2" onclick="cambio()" >
+            <option value="1">Dolares</option>
+            <option value="1.13">Euro</option>
+            <option value="0.27">Reales</option>
+            <option value="0.0677">Pesos Argentinos</option>
+            <option value="0.0015">Chilenos</option>
+            <option value="0.031">Uruguayos</option>
+        </select>
+    
+    <input onclick="borrar()" value="Borrar" type="button" id="button">
+    
+     <br>
+    
+    
+    
+    
+    
+</form>
+      <script>
+    
+    function borrar(){
+        document.fo.valores1.value= "";
+        document.fo.valores2.value= "";
+    }
+
+    function solonumeros(e){
+        
+        key=e.keyCode || e.which;
+        
+        teclado=String.fromCharCode(key);
+        
+        numeros="0123456789.";
+       
+        
+        if(numeros.indexOf(teclado)==-1 ){
+            return false;
+        }
+    }
+    
+    function solonumeros2(e){
+        
+        key=e.keyCode || e.which;
+        
+        teclado=String.fromCharCode(key);
+        
+        numeros="";
+       
+        
+        if(numeros.indexOf(teclado)==-1 ){
+            return false;
+        }
+    }
+    
+    
+    function cambio(){
+        var cambiar = document.fo.valores1.value;
+        
+        var ayuda1 = document.fo.monedas1.value;
+        
+        var ayuda2 = document.fo.monedas2.value;
+        
+        var pri =eval(cambiar*ayuda1);
+        var seg =eval(pri/ayuda2);
+        
+        document.getElementById("valores2").value=seg;
+        
+    }
+    
+</script>
+				</div>
+			</div>
+			<div class="boxB">
+				<div class="box">
+					 <div id=relojj align="center">
+
+            <div id="reloj" class="cronito">0 : 00 : 00 : 00</div>
+                <form name="cron" action="#"><br><br>
+                    <input type="button" value="Empezar" name="empieza" />
+                    <input type="button" value="Parar" name="para" />
+                    <input type="button" value="Continuar" name="continua" />
+                    <input type="button" value="Reiniciar" name="reinicia" />
+                </form>
+            </div>
+                <br>
+                <br>
+                <br>
+	
+
+                 <script>
+window.onload = function() {
+visor=document.getElementById("reloj"); //localizar pantalla del reloj
+//asociar eventos a botones: al pulsar el botón se activa su función.
+document.cron.empieza.onclick = empezar; 
+document.cron.para.onclick = parar;
+document.cron.continua.onclick = continuar;
+document.cron.reinicia.onclick = reiniciar;
+}
+//variables de inicio:
+var marcha=0; //control del temporizador
+var cro=0; //estado inicial del cronómetro.
+//cronometro en marcha. Empezar en 0:
+function empezar() {
+         if (marcha==0) { //solo si el cronómetro esta parado
+            emp=new Date() //fecha actual
+            elcrono=setInterval(tiempo,10); //función del temporizador.
+            marcha=1 //indicamos que se ha puesto en marcha.
+            }
+         }
+function tiempo() { //función del temporizador
+         actual=new Date() //fecha en el instante
+         cro=actual-emp //tiempo transcurrido en milisegundos
+         cr=new Date() //fecha donde guardamos el tiempo transcurrido
+         cr.setTime(cro) 
+         cs=cr.getMilliseconds() //milisegundos del cronómetro
+         cs=cs/10; //paso a centésimas de segundo.
+         cs=Math.round(cs)
+         sg=cr.getSeconds(); //segundos del cronómetro
+         mn=cr.getMinutes(); //minutos del cronómetro
+         ho=cr.getHours()-21; //horas del cronómetro
+         if (cs<10) {cs="0"+cs;}  //poner siempre 2 cifras en los números
+         if (sg<10) {sg="0"+sg;} 
+         if (mn<10) {mn="0"+mn;} 
+         visor.innerHTML=ho+" : "+mn+" : "+sg+" : "+cs; //pasar a pantalla.
+         }
+//parar el cronómetro
+function parar() { 
+         if (marcha==1) { //sólo si está en funcionamiento
+            clearInterval(elcrono); //parar el crono
+            marcha=0; //indicar que está parado.
+            }		
+         }		 
+//Continuar una cuenta empezada y parada.
+function continuar() {
+         if (marcha==0) { //sólo si el crono está parado
+            emp2=new Date(); //fecha actual
+            emp2=emp2.getTime(); //pasar a tiempo Unix
+            emp3=emp2-cro; //restar tiempo anterior
+            emp=new Date(); //nueva fecha inicial para pasar al temporizador 
+            emp.setTime(emp3); //datos para nueva fecha inicial.
+            elcrono=setInterval(tiempo,10); //activar temporizador
+            marcha=1;
+            }		
+         }
+//Volver al estado inicial
+function reiniciar() {
+         if (marcha==1) { //si el cronómetro está en marcha:
+            clearInterval(elcrono); //parar el crono
+            marcha=0;	//indicar que está parado
+            }
+         cro=0; //tiempo transcurrido a cero
+         visor.innerHTML = "0 : 00 : 00 : 00"; 
+         }	
+
+</script>
+				</div>
+			</div>
+			<div class="boxC">
+				<div class="box">
+					<p> No se moleste en tocar este boton, no hace nada.</p>
+				</div>
+			</div>
+		</div>
+		<ul class="actions">
+			<li><a href="#" class="button">Vamos Arriba</a></li>
+		</ul>
+	</div>
+    
+</div>
+<div id="copyright" class="container">
+	<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+</div>
+</body>
+</html>
